@@ -1,3 +1,5 @@
+## for colored output
+from termcolor import colored
 ## Reading the file
 f = open("airlines.csv")
 ## reading each line of file
@@ -31,7 +33,7 @@ for row in data_air[1:]:
         count_record[final_row[0]] = 0
     count_record[final_row[0]]+=1
 #print(final_row)
-print("OUTPUT 1 : ")
+print(colored("OUTPUT 1: ",'green'))
 print()
 print("The list of unique airport names and number of times ")
 #print(count_record)
@@ -55,7 +57,12 @@ for k,v in count_record.items():
         max_val = v
         max_key =k
 print()
-print("OUTPUT 2 : ")
-print("The airport which was mentioned the most number of times is: ", max_key," : ", max_val)
-print("OUTPUT 3 : ")
-print("The airport which was mentioned the least number of times is: ",min_key,":", min_val)
+print(colored("OUTPUT 2: ",'green'))
+print("The airport which was mentioned the most number of times is: ")
+print(colored( max_key,'blue'),end=" : ")
+print(colored( max_val,'blue'))
+print(colored("OUTPUT 3: ",'green'))
+print("The airport which was mentioned the least number of times is: ")
+
+print(colored( min_key,'blue'),end=" : ")
+print(colored( min_val,'blue'))
